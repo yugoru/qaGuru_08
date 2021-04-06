@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("Запуск всех тестов сразу")
-public class AllTestsRun {
+public class AllTestsRun extends TestBase {
 
     private final GithubSteps steps = new GithubSteps();
     private final LambdaTest lambda = new LambdaTest();
