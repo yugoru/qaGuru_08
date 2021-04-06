@@ -1,8 +1,6 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Owner;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -39,11 +37,6 @@ public class TextBoxTestsYugoru extends TestBase {
             city = "Panipat";
     Path filePath = Paths.get("src/test/resources/" + fileName);
     File file = new File(filePath.toString());
-
-    @BeforeAll
-    static void setup() {
-        Configuration.startMaximized = true;
-    }
 
     @Test
     @DisplayName("StepTest")
@@ -106,13 +99,8 @@ public class TextBoxTestsYugoru extends TestBase {
                     text(currentAddress),
                     text(state + " " + city));
         });
-    }
-
-    @Test
-    @DisplayName("Закрываем форму проверки")
-    @Owner("yugoru")
-    void closeFormTest() {
-        $(".modal-content").find(byCssSelector("#closeLargeModal")).click();
-
+        step("Закрываем форму проверки", () -> {
+            $(".modal-content").find(byCssSelector("#closeLargeModal")).click();
+        });
     }
 }
