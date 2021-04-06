@@ -17,7 +17,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 @DisplayName("Форма регистрации студента")
-public class TextBoxTestsYugoru {
+public class TextBoxTestsYugoru extends TestBase {
 
     String firstName = "Ada",
             lastName = "Lovelace",
